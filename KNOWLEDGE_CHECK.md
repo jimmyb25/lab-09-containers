@@ -30,4 +30,10 @@ Run `docker images book-analysis`, and note the image ID of `book-analysis:0.1.0
 
 **Your answer:** Paste the image ID from before and after the rebuild. Why is it a problem for someone who uses your image that `0.1.0` now names a different image, and what should you have done instead?
 
+Before: eb976161bb3e
+
+After: c976a60d9382
+
+The fact that the old tag now references a different image is a huge problem because it doesn't allow us to use the old version. Just like the way we set package versions or python version, if the change introduced a bug somehow, we couldn't get the old version--also you wouldn't be able to tell based on the tag, so it could catch a user by surprise that things have changed. Instead, I should've named it with 0.1.1 or something else to indicate a new version.
+
 ...
