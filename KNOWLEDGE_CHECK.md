@@ -8,6 +8,8 @@ Assume you want to share your image with others and make it publicly available o
 
 **Your answer:** Give two reasons why this is a bad idea. Think of who could then read your credentials, and of what happens when your Learner Lab session ends.
 
+This is a bad idea because copying the .aws directory to the dockerfile would let anyone read your .aws credentials through the ghcr.io publicly available image. Also, when the learner lab ends, people would have your credentials copied into their file. Those credentials would be invalid, and therefore everyone would be unable to run anything.
+
 ...
 
 ## 2. Where did the Atlas password come from?
