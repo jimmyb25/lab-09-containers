@@ -20,6 +20,8 @@ In Step 4, you ran the analysis once with `-v ~/.aws:/home/app/.aws:ro` only, wi
 
 **Your answer:** Explain, step by step, where the container found the Atlas settings in that run.
 
+The get_atlas_settings function checked if there was the MONGODB_ATLAS_URL environment variable, to which the answer was False. Then, it ran the try-catch block, which creates a boto3 client that looks in the SSM Parameter Store to find a parameter called mongodb_credentials which contains our three credentials and then it returns that. AWS gave the credentials because we set up the docker run command with -v <.aws directory>:ro, which gave the container read only access to our credentials while it was running (did not upload to the image!)
+
 ...
 
 ## 3. Same tag, different image
