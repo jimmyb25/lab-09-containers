@@ -8,7 +8,7 @@ Assume you want to share your image with others and make it publicly available o
 
 **Your answer:** Give two reasons why this is a bad idea. Think of who could then read your credentials, and of what happens when your Learner Lab session ends.
 
-This is a bad idea because copying the .aws directory to the dockerfile would let anyone read your .aws credentials through the ghcr.io publicly available image. Also, when the learner lab ends, people would have your credentials copied into their file. Those credentials would be invalid, and therefore everyone would be unable to run anything.
+This is a bad idea because copying the .aws directory to the image would let anyone read your .aws credentials through the ghcr.io publicly available image, which would let them access your buckets, and also your mongodb credentials. Also, when the learner lab ends, people would have your credentials copied into their image. Those credentials would be invalid, and therefore everyone would be unable to run anything and I would also have to rebuild the image and republish to the ghcr.io every time I open a new learner lab session.
 
 ...
 
